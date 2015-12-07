@@ -1,6 +1,6 @@
 {
   "name": "enjoyhint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web-tool that provides the simplest way to create interactive tutorials and hints.",
   "main": "enjoyhint.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xbsoftware/enjoyhint.git"
+    "url": "https://github.com/uniteflights/enjoyhint.git"
   },
   "keywords": [
     "enjoyhint",
@@ -19,9 +19,9 @@
   "author": "XB Software",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xbsoftware/enjoyhint/issues"
+    "url": "https://github.com/uniteflights/enjoyhint/issues"
   },
-  "homepage": "https://github.com/xbsoftware/enjoyhint",
+  "homepage": "https://github.com/uniteflights/enjoyhint",
   "devDependencies": {
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-cssmin": "^0.11.0",
