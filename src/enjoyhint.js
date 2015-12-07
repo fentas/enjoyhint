@@ -273,8 +273,8 @@ var EnjoyHint = function (_options) {
         that.setScript(_data);
     };
 
-    that.run = function () {
-        that.runScript();
+    that.run = function (current_step) {
+        that.runScript(current_step);
     };
 
     that.resume = function () {
