@@ -17,7 +17,7 @@ EnjoyHint require the following plugins and libs:
 #### Installation
 You can install it through `bower` package manager:
 ```
-bower install https://github.com/uniteflights/enjoyhint
+bower install git@github.com:uniteflights/enjoyhint.git
 ```
 Alternative way:
 - Download the latest version of EnjoyHint
