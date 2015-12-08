@@ -1,16 +1,11 @@
 var EnjoyHint = function (_options) {
-    var that = this;
+    var that = this, noop = function() {};
     // Some options
     var defaults = {
-        onStart: function () {
-
-        },
-        onEnd: function () {
-
-        },
-        onSkip: function () {
-
-        }
+        onStart: noop,
+        onEnd: noop,
+        onSkip: noop,
+        onNext: noop
     };
     var options = $.extend(defaults, _options);
 
@@ -30,6 +25,7 @@ var EnjoyHint = function (_options) {
         $body.enjoyhint({
             onNextClick: function () {
                 nextStep();
+                options.onNext.call(that, current_step)
             },
             onSkipClick: function () {
                 skipAll();
@@ -217,7 +213,7 @@ var EnjoyHint = function (_options) {
         var $element = $(step_data.selector);
         off(step_data.event);
         $element.off(makeEventName(step_data.event));
-        options.onSkip();
+        options.onSkip.call(that, current_step);
         destroyEnjoy();
     };
 

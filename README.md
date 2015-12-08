@@ -121,10 +121,11 @@ $.get('/load/some_data', function(data){
 **Script Events**:
 * `onStart` - fires on the first step.
 * `onEnd` - fires after the last step in script.
-* `onSkip` - fires after user has clicked skip.
+* `onSkip` - fires after user has clicked skip. Context: EnjoyHint. Arguments: CurrentStep.
+* `onNext` - fires after user has clicked next. Context: EnjoyHint. Arguments: CurrentStep.
 ```javascript
 var enjoyhint_instance = new EnjoyHint({
-  onStart:function(){
+  onSkip: function(CurrentStep) {
     //do something
   }
 });
@@ -164,6 +165,8 @@ var enjoyhint_script_steps = [
   }
 ];
 ```
+* `onNext` event.
+* Context (EnjoyHint instance) and Argument (Current step) for `onNext` and `onSkip`
 
 ##### v.3
 
