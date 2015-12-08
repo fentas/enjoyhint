@@ -134,10 +134,10 @@ var enjoyhint_instance = new EnjoyHint({
 ```javascript
 var enjoyhint_script_steps = [
   {
-    selector:'.some_btn',//jquery selector
-    event:'click',
-    description:'Click on this btn',
-    onBeforeStart:function(){
+    selector: '.some_btn',//jquery selector
+    event: 'click',
+    description: 'Click on this btn',
+    onBeforeStart: function() {
       //do something
     }
   }
@@ -151,6 +151,19 @@ var enjoyhint_script_steps = [
 * Ability to set custom CSS on close button.
 * `run`, `runScript` - run the current script. Arguments: current_step (set step to start).
 * `scrollTo` - set specifically where to scroll. ( **element** | position )
+* Now you can change step data before start. Like this:
+```javascript
+var enjoyhint_script_steps = [
+  {
+    selector: '.some_btn',//jquery selector
+    event: 'click',
+    description: 'Click on this btn',
+    onBeforeStart: function() {
+      this.scrollTo = $('body > .page-wrap').height()
+    }
+  }
+];
+```
 
 ##### v.3
 

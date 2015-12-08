@@ -65,7 +65,7 @@ var EnjoyHint = function (_options) {
             $(".enjoyhint").addClass("enjoyhint-step-"+(current_step+1));
             var step_data = data[current_step];
             if (step_data.onBeforeStart && typeof step_data.onBeforeStart === 'function') {
-                step_data.onBeforeStart();
+                step_data.onBeforeStart.call(this);
             }
             var timeout = step_data.timeout || 0;
             setTimeout(function () {
