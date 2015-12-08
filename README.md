@@ -71,7 +71,7 @@ var enjoyhint_script_steps = [
 * `keyCode` - the code of a button, which triggers the next EnjoyHint step upon a click. Defined by the “key” event. (“key #block” : “hello”).
 * `event_selector` - if you need to attach an event (that was set in "event" property) to other selector, you can use this one  
 * `timeout` - delay before the moment, when an element is highlighted   
-* `shape` - shape for highlighting (circle|rect)
+* `shape` - shape for highlighting ( circle | rect)
 * `radius` -  if the shape of "circle" is specified, we can set the radius.
 * `margin` - margin for the highlight shape (for Ex.:10)  
 * `top` - top margin for the shape of "rect" type  
@@ -90,9 +90,9 @@ var enjoyhint_script_steps = [
                     "closeButton": {left: 10, top: 10}
                 }
   ```
-* `showSkip` - shows or hides the Skip button (true|false)
-* `showNext` - shows or hides the Next button (true|false)
-
+* `showSkip` - shows or hides the Skip button ( true | false)
+* `showNext` - shows or hides the Next button ( true | false)
+* `scrollTo` - set specifically where to scroll ( **element** | position )
 
 
 
@@ -148,8 +148,9 @@ var enjoyhint_script_steps = [
 
 ##### v3.1.1
 
-* Ability to set custom CSS on close button
-* ``
+* Ability to set custom CSS on close button.
+* `run`, `runScript` - run the current script. Arguments: current_step (set step to start).
+* `scrollTo` - set specifically where to scroll. ( **element** | position )
 
 ##### v.3
 
