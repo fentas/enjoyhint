@@ -60,9 +60,8 @@ var EnjoyHint = function (_options) {
             $(".enjoyhint").removeClass("enjoyhint-step-"+current_step);
             $(".enjoyhint").addClass("enjoyhint-step-"+(current_step+1));
             var step_data = data[current_step];
-            if (step_data.onBeforeStart && typeof step_data.onBeforeStart === 'function') {
-                step_data.onBeforeStart.call(this);
-            }
+            (step_data.onBeforeStart || noop).call(step_data);
+
             var timeout = step_data.timeout || 0;
             setTimeout(function () {
                 if (!step_data.selector) {
@@ -182,7 +181,8 @@ var EnjoyHint = function (_options) {
                         right: step_data.right,
                         margin: step_data.margin,
                         scroll: step_data.scroll,
-                        close_css: step_data.closeButton
+                        close_css: step_data.closeButton,
+                        sideStatement: step_data.sideStatement
                     };
 
                     if (step_data.shape && step_data.shape == 'circle') {

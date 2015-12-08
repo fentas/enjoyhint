@@ -315,20 +315,20 @@ CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
 
                     var margin = 10;
                     var conn_left = {
-                        x: label_left - margin,
+                        x: label_left - margin + data.left,
                         y: label_top + Math.round(label_h / 2)
                     };
                     var conn_right = {
-                        x: label_right + margin,
+                        x: label_right + margin + data.right,
                         y: label_top + Math.round(label_h / 2)
                     };
                     var conn_top = {
                         x: label_left + Math.round(label_w / 2),
-                        y: label_top - margin
+                        y: label_top - margin + data.top
                     };
                     var conn_bottom = {
                         x: label_left + Math.round(label_w / 2),
-                        y: label_bottom + margin
+                        y: label_bottom + margin + data.bottom
                     };
                     label.detach();
                     setTimeout(function () {
@@ -532,7 +532,11 @@ CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
                     var label_data = that.renderLabel({
                         x: label_x,
                         y: label_y,
-                        text: data.text
+                        text: data.text,
+                        left: data.left || 0,
+                        right: data.right || 0,
+                        top: data.top || 0,
+                        bottom: data.bottom || 0
                     });
 
                     that.$next_btn.css({
@@ -633,6 +637,10 @@ CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
                             ['top', 'right', 'top'],//mid_bot
                             ['left', 'bottom', 'bottom']//bot
                         );
+                    }
+
+                    if ( data.sideStatement && data.sideStatement.length == 3 ) {
+                      setArrowData(data.sideStatement[0], data.sideStatement[1], data.sideStatement[2]);
                     }
 
                     var label_conn_coordinates = label_data.conn[conn_label_side];
