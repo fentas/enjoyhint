@@ -146,7 +146,7 @@ var enjoyhint_script_steps = [
 
 #### Release notes
 
-##### v3.1.1
+##### v.3.1.1
 
 * Ability to set custom CSS on close button.
 * `run`, `runScript` - run the current script. Arguments: current_step (set step to start).

@@ -85,7 +85,7 @@ var EnjoyHint = function (_options) {
                 setTimeout(function(){
                     that.clear();
                 }, 250);
-                $(document.body).scrollTo(step_data.scrollTo || step_data.selector, step_data.scrollAnimationSpeed || 250, {offset: -100});
+                $(document.body).scrollTo((typeof step_data.scrollTo !== 'number' ? step_data.selector :  step_data.scrollTo), step_data.scrollAnimationSpeed || 250, {offset: -100});
                 setTimeout(function () {
                     var $element = $(step_data.selector);
                     var event = makeEventName(step_data.event);
@@ -596,7 +596,7 @@ var EnjoyHint = function (_options) {
                     var label_h = label.height();
                     var label_left = label.offset().left;
                     var label_right = label.offset().left + label_w;
-                    var label_top = label.offset().top - $(document).scrollTop();
+                    var label_top = label.offset().top - $(document).scrollTop();;
                     var label_bottom = label.offset().top + label_h;
 
                     var margin = 10;
