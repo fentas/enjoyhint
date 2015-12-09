@@ -24,8 +24,8 @@ var EnjoyHint = function (_options) {
 
         $body.enjoyhint({
             onNextClick: function () {
+                options.onNext.call(that, current_step);
                 nextStep();
-                options.onNext.call(that, current_step)
             },
             onSkipClick: function () {
                 skipAll();
