@@ -229,8 +229,8 @@ var EnjoyHint = function (_options) {
     };
 
     /********************* PUBLIC METHODS ***************************************/
-    that.runScript = function (current_step) {
-        current_step = current_step || 0;
+    that.runScript = function (currentStep) {
+        current_step = currentStep || 0;
         options.onStart();
         stepAction();
     };
@@ -269,8 +269,8 @@ var EnjoyHint = function (_options) {
         that.setScript(_data);
     };
 
-    that.run = function (current_step) {
-        that.runScript(current_step);
+    that.run = function (currentStep) {
+        that.runScript(currentStep);
     };
 
     that.resume = function () {
