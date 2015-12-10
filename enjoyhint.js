@@ -24,8 +24,8 @@ var EnjoyHint = function (_options) {
 
         $body.enjoyhint({
             onNextClick: function () {
+                options.onNext.call(that, current_step);
                 nextStep();
-                options.onNext.call(that, current_step)
             },
             onSkipClick: function () {
                 skipAll();
@@ -229,8 +229,8 @@ var EnjoyHint = function (_options) {
     };
 
     /********************* PUBLIC METHODS ***************************************/
-    that.runScript = function (current_step) {
-        current_step = current_step || 0;
+    that.runScript = function (currentStep) {
+        current_step = currentStep || 0;
         options.onStart();
         stepAction();
     };
@@ -269,8 +269,8 @@ var EnjoyHint = function (_options) {
         that.setScript(_data);
     };
 
-    that.run = function (current_step) {
-        that.runScript(current_step);
+    that.run = function (currentStep) {
+        that.runScript(currentStep);
     };
 
     that.resume = function () {
@@ -922,7 +922,9 @@ var EnjoyHint = function (_options) {
                     }
 
                     if ( data.sideStatement && data.sideStatement.length == 3 ) {
-                      setArrowData(data.sideStatement[0], data.sideStatement[1], data.sideStatement[2]);
+                      if ( data.sideStatement[0] !== 'auto' ) conn_label_side = data.sideStatement[0];
+                      if ( data.sideStatement[1] !== 'auto' ) conn_circle_side = data.sideStatement[1];
+                      if ( data.sideStatement[2] !== 'auto' ) arrow_side = data.sideStatement[2];
                     }
 
                     var label_conn_coordinates = label_data.conn[conn_label_side];

@@ -93,7 +93,7 @@ var enjoyhint_script_steps = [
 * `showSkip` - shows or hides the Skip button ( true | false)
 * `showNext` - shows or hides the Next button ( true | false)
 * `scrollTo` - set specifically where to scroll ( **element** | position )
-* `sideStatement` - if necessary you can correct the arrow directions manually. [`from side`, `to side`, `arrow head`] (valid: top, bottom, left, right)
+* `sideStatement` - if necessary you can correct the arrow directions manually. [`from side`, `to side`, `arrow head`] (valid: top, bottom, left, right, auto)
 ```javascript
 	var options = {
                     "next #block": 'Hello.',

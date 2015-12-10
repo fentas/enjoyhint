@@ -640,7 +640,9 @@ CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
                     }
 
                     if ( data.sideStatement && data.sideStatement.length == 3 ) {
-                      setArrowData(data.sideStatement[0], data.sideStatement[1], data.sideStatement[2]);
+                      if ( data.sideStatement[0] !== 'auto' ) conn_label_side = data.sideStatement[0];
+                      if ( data.sideStatement[1] !== 'auto' ) conn_circle_side = data.sideStatement[1];
+                      if ( data.sideStatement[2] !== 'auto' ) arrow_side = data.sideStatement[2];
                     }
 
                     var label_conn_coordinates = label_data.conn[conn_label_side];
